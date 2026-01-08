@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ArticleList from './ArticleList';
-import ArticleDetails from './ArticleDetails';
+import ArticleDetails from './ArticleDetails.jsx';
 import CommentsSection from './CommentsSection.jsx';
 
 export default function ArticlesApp() {

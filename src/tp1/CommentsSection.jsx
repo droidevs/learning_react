@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CommentForm from './CommentForm';
+import CommentForm from './CommentForm.jsx';
 
 function CommentsSection({postId, comments, addComment}) {
 
