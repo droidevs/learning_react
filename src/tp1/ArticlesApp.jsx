@@ -41,6 +41,15 @@ export default function ArticlesApp() {
         setComments(prevComments => [...prevComments, newComment]);
     }
 
+    function onSupprimer(articleId) {
+        setArticles(prevArticles => prevArticles.filter(article => article.id !== articleId));
+        if (activeArticle && activeArticle.id === articleId) {
+            setActiveArticle(null);
+            setShowDetails(false);
+            setShowComments(false);
+        }
+    }
+
     return (
         <div style={{ display: 'flex', gap: '20px', padding: '20px' }}>
             <div style={{ flex: 1 }}>
@@ -66,6 +75,9 @@ export default function ArticlesApp() {
                 <ArticleList 
                     articles={filteredArticles} 
                     onActiveArticle={setActiveArticle}
+
+                    onSupprimer={onSupprimer}
+                    
                     onShowDetails={ () => {
                         setShowDetails(true)
                         setShowComments(false)

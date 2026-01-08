@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import CommentsSection from './CommentsSection.jsx';
 
-function ArticleList({ articles, onActiveArticle, onShowComments, onShowDetails }) {
-    const [visibleCommentsId, setVisibleCommentsId] = useState(null);
-
+function ArticleList({ articles, onActiveArticle, onShowComments, onShowDetails , onSupprimer}) {
+    
     return (
         <ul>
             {articles.map(article => (
@@ -21,7 +20,7 @@ function ArticleList({ articles, onActiveArticle, onShowComments, onShowDetails 
                     }}>
                         Commentaires
                     </button>
-                    <button style={{color: 'red'}}>Supprimer</button>
+                    <button style={{color: 'red'}} onClick={() => onSupprimer(article.id)}>Supprimer</button>
 
                 </li>
             ))}
